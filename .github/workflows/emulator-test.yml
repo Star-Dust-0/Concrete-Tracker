@@ -23,15 +23,23 @@ jobs:
             sleep 6
             mkdir -p shots
             adb exec-out screencap -p > shots/1-launch.png
-            adb shell input tap 540 2250
+            adb shell input tap 774 771
             sleep 2
-            adb exec-out screencap -p > shots/2-tab2.png
-            adb shell input tap 900 2250
+            adb exec-out screencap -p > shots/2-today-28d.png
+            adb shell input tap 888 1086
             sleep 2
-            adb exec-out screencap -p > shots/3-tab3.png
-            adb shell input tap 180 2250
+            adb exec-out screencap -p > shots/3-today-7d.png
+            adb shell input tap 540 230
             sleep 2
-            adb exec-out screencap -p > shots/4-tab1.png
+            adb exec-out screencap -p > shots/4-differences.png
+            adb shell input tap 220 230
+            sleep 2
+            adb exec-out screencap -p > shots/5-history.png
+            adb shell cmd locale set-app-locales com.aistudio.concretecalc.vwxyz --locales ar
+            adb shell am force-stop com.aistudio.concretecalc.vwxyz
+            adb shell am start -n com.aistudio.concretecalc.vwxyz/com.example.MainActivity
+            sleep 6
+            adb exec-out screencap -p > shots/6-arabic.png
             adb logcat -d -s AndroidRuntime:E > shots/crash.txt
             adb shell pidof com.aistudio.concretecalc.vwxyz > shots/pid.txt || echo none > shots/pid.txt
       - uses: actions/upload-artifact@v4
