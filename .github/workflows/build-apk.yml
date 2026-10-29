@@ -46,7 +46,7 @@ jobs:
           test -s "$APK"
           APKSIGNER=$(ls "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -1)
           "$APKSIGNER" verify --print-certs "$APK" | tee signer-certs.txt
-          grep -qi '0A:8B:60:95:61:F2:99:EA:BA:45:18:C5:7E:55:8D:50:6E:39:91:BD:0A:C5:51:CC:16:77:16:24:1A:DA:D5:5F' signer-certs.txt
+          grep -qi '0a8b609561f299eaba4518c57e558d506e3991bd0ac551cc167716241adad55f' signer-certs.txt
       - uses: actions/upload-artifact@v4
         with:
           name: signed-release-apk
