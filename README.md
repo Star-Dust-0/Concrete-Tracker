@@ -64,7 +64,7 @@
 ## ⚙️ بناء المشروع برمجياً (Building Source Code)
 
 ```bash
-git clone https://github.com/StarsDust01/Concrete-Tracker.git
+git clone https://github.com/Star-Dust-0/Concrete-Tracker.git
 cd Concrete-Tracker
 gradle assembleDebug
 ```
